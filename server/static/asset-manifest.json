@@ -1,7 +1,7 @@
 {
-  "main.js": "/static/static/js/main.1a97828c.js",
-  "main.js.map": "/static/static/js/main.1a97828c.js.map",
-  "vendors~main.js": "/static/static/js/vendors~main.44b5bcdb.chunk.js",
-  "vendors~main.js.map": "/static/static/js/vendors~main.44b5bcdb.chunk.js.map",
-  "index.html": "/static/index.html"
+  "main.js": "/static/js/main.1ddfa88a.js",
+  "main.js.map": "/static/js/main.1ddfa88a.js.map",
+  "vendors~main.js": "/static/js/vendors~main.9e622549.chunk.js",
+  "vendors~main.js.map": "/static/js/vendors~main.9e622549.chunk.js.map",
+  "index.html": "/index.html"
 }
