@@ -1,2 +1,2 @@
-release: which node & npm --prefix /client install & npm --prefix /client run build
+release: yarn install --cwd ./client & yarn build --cwd ./client
 web: gunicorn --worker-class eventlet -w 1 app:app
