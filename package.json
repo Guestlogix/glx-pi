@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "guestlogix guest app team dashboard.",
   "scripts": {
+    "preinstall": "cd ./client && npm install && npm install -g typescript",
     "build": "node client/scripts/build.js"
   },
   "repository": {

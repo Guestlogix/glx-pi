@@ -67,7 +67,7 @@
   },
   "scripts": {
     "start": "node scripts/start.js",
-    "build": "npm install && npm install -g typescript && node scripts/build.js",
+    "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
     "integration": "node scripts/integration.js"
   },
