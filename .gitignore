@@ -8,8 +8,6 @@ coverage/
 
 # production
 build/
-server/templates/
-server/static/
 
 # misc
 .DS_Store
