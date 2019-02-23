@@ -155,13 +155,19 @@ function copyPublicFolder() {
 
 function reOrganizeBuildDirectory(callback) {
   // move the index.html to the templates dir
-  fs.move(
+  fs.moveSync(
     `${paths.appBuild}/index.html`,
-    `${paths.appBuildTemplates}/index.html`
+    `${paths.appServerTemplates}/index.html`
   );
 
-  // move the yarn generated static dir up into the flask static dir
-  fs.move(`${paths.appBuild}/static`, paths.appBuild);
+  // move the yarn generated static dir to static
+  fs.copySync(`${paths.appBuild}/static`, paths.appServerStatic);
+  // move the rest of yarn generated to static
+  fs.copySync(paths.appBuild, paths.appServerStatic);
+
+  //remove the dup static dir and build dir
+  fs.removeSync(`${paths.appServerStatic}/static`);
+  //fs.removeSync(paths.appBuild);
 
   callback();
 }
