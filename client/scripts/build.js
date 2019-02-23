@@ -161,7 +161,7 @@ function reOrganizeBuildDirectory(callback) {
   );
 
   // move the yarn generated static dir up into the flask static dir
-  fs.moveSync(`${paths.appBuild}/static`, paths.appBuild);
+  fs.move(`${paths.appBuild}/static`, paths.appBuild);
 
   callback();
 }
