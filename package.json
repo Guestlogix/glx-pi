@@ -1,0 +1,15 @@
+{
+  "name": "guest-dashboard",
+  "version": "0.0.1",
+  "description": "guestlogix guest app team dashboard.",
+  "scripts": {
+    "install": "yarn install --cwd ./client",
+    "build": "yarn install --cwd ./build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Guestlogix/glx-pi.git"
+  },
+  "author": "team guestapp",
+  "license": "MIT"
+}
