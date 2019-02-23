@@ -4,7 +4,7 @@
   "description": "guestlogix guest app team dashboard.",
   "scripts": {
     "preinstall": "cd ./client && npm install && npm install --only=dev",
-    "build": "node client/scripts/build.js"
+    "build": "cd ./client && node scripts/build.js"
   },
   "repository": {
     "type": "git",
