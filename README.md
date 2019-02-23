@@ -1,3 +1,3 @@
-## glx-pi
+## guest-app-dashboard
 
-Real-time messages displayed by a locally hosting Raspberry Pi
+A lightweight server and react app to surface real time data to the guest app team.

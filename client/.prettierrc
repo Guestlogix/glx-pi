@@ -1,0 +1,16 @@
+{
+  "trailingComma": "es5",
+  "tabWidth": 2,
+  "useTabs": false,
+  "printWidth": 80,
+  "bracketSpacing": true,
+  "semi": false,
+  "overrides": [
+    {
+      "files": "*.js",
+      "options": {
+        "semi": true
+      }
+    }
+  ]
+}
