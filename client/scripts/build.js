@@ -154,6 +154,10 @@ function copyPublicFolder() {
 }
 
 function reOrganizeBuildDirectory(callback) {
+  // clear server dirs
+  fs.removeSync(paths.appServerStatic);
+  fs.removeSync(paths.appServerTemplates);
+
   // move the index.html to the templates dir
   fs.moveSync(
     `${paths.appBuild}/index.html`,
