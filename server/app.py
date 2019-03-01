@@ -1,41 +1,37 @@
 #!/usr/bin/env python
 from threading import Lock
-from flask import Flask, render_template, session, request
+from flask import Flask
 from flask_socketio import SocketIO, emit, join_room, leave_room, close_room, rooms, disconnect
+#from flask_cors import CORS
+from .settings import ProdConfig
+from server import main, github #,slack
 
 # Set this variable to "threading", "eventlet" or "gevent" to test the
 # different async modes, or leave it set to None for the application to choose
 # the best option based on installed packages.
 async_mode = None
 
-app = Flask(__name__, static_folder='./static')
-app.config['SECRET_KEY'] = 'secret!'
-socketio = SocketIO(app, async_mode=async_mode)
-thread = None
-thread_lock = Lock()
+def create_app(config_object=ProdConfig):
+    app = Flask(__name__, static_folder='./static')
+    app.url_map.strict_slashes = False
+    app.config.from_object(config_object)
+    #setup_cors(app)
+    register_blueprints(app)
+    thread = None
+    thread_lock = Lock()
+    socketio = SocketIO(app, async_mode=async_mode)
+    return (socketio, app)
 
 
-def background_thread():
-    """Example of how to send server generated events to clients."""
-    count = 0
-    while True:
-        socketio.sleep(10)
-        count += 1
-        socketio.emit('my_response', {'data': 'Server generated event', 'count': count}, namespace='/test')
+# def setup_cors(app):
+#     cors = CORS()
+#     origins = app.config.get('CORS_ORIGIN_WHITELIST', '*')
+#     cors.init_app(main.views.blueprint, origins=origins)
+#     cors.init_app(github.views.blueprint, origins=origins)
+#     cors.init_app(slack.views.blueprint, origins=origins)
 
 
-@app.route('/')
-def index():
-    return render_template('index.html', async_mode=socketio.async_mode)
-
-@app.route('/slack', methods=['POST'])
-def slack():
-    message = request.form.get('text', None)
-    socketio.emit('my_response',
-        {'data': message},
-        namespace='/test',
-        broadcast=True)
-    return 'Success! "{}" should be on the dashboard.'.format(message)
-
-if __name__ == '__main__':
-    socketio.run(app, debug=True)
+def register_blueprints(app):
+    app.register_blueprint(main.views.blueprint)
+    app.register_blueprint(github.views.blueprint)
+    #app.register_blueprint(slack.views.blueprint)
