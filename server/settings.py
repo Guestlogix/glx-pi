@@ -17,7 +17,9 @@ class Config(object):
 class ProdConfig(Config):
     ENV = 'prod'
     DEBUG = False
+    HOST = '0.0.0.0'
 
 class DevConfig(Config):
     ENV = 'dev'
     DEBUG = True
+    HOST = 'localhost'
