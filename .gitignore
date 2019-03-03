@@ -9,6 +9,8 @@ coverage/
 
 # production
 build/
+server/static/
+server/templates/
 
 # misc
 .DS_Store
