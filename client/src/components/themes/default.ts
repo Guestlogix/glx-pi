@@ -22,13 +22,14 @@ theme.palette = {
   alert: ["#EB9F00"],
   success: ["#519D33"],
   white: ["#ffffff"],
-  grayscale: ["#212121", "#616161", "#9e9e9e", "#bdbdbd", "#e0e0e0", "#ffffff"],
+  background: ["rgb(30, 36, 48)"],
+  grayscale: ["#081B33", "#152642", "#2F4562", "#506680", "#767D92", "#353C51"],
 }
 
 theme.reversePalette = reversePalette(theme.palette)
 
 theme.fonts = {
-  primary: "Helvetica Neue, Helvetica, Roboto, sans-serif",
+  primary: "sans-serif",
   pre: "Consolas, Liberation Mono, Menlo, Courier, monospace",
   quote: "Georgia, serif",
 }
