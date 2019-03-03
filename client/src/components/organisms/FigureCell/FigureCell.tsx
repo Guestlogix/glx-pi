@@ -5,6 +5,7 @@ import { palette } from "styled-theme"
 
 interface IProps {
   value: string
+  subtitle: string
 }
 
 const Container = styled.div`
@@ -17,7 +18,7 @@ const Container = styled.div`
 const Subtitle = styled.div`
   text-align: center;
   font-size: 25px;
-  color: ${palette("grayscale", 2)()};
+  color: ${palette("grayscale", 2)};
 `
 
 export const FigureCell: React.StatelessComponent<IProps> = props => {
@@ -25,9 +26,11 @@ export const FigureCell: React.StatelessComponent<IProps> = props => {
     <Container>
       <div>
         <div>
-          <Figure size={"large"}>{props.value}</Figure>
+          <Figure size={"large"} color={`${palette("grayscale", 2)()}`}>
+            {props.value}
+          </Figure>
         </div>
-        <Subtitle>Subtitle</Subtitle>
+        <Subtitle>{props.subtitle}</Subtitle>
       </div>
     </Container>
   )

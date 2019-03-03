@@ -2,8 +2,8 @@ import styled from "styled-components"
 import { palette } from "styled-theme"
 
 interface IProps {
-  size: "large" | "medium" | "small"
-  color?: string
+  size?: "large" | "medium" | "small"
+  color: string
 }
 
 const sizes = { large: "80px", medium: "60px", small: "30px" }

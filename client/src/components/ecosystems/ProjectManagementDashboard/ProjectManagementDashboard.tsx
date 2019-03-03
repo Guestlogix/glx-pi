@@ -25,10 +25,10 @@ export class ProjectManagementDashboard extends React.Component<{}, IState> {
           colspan={1}
           rowspan={1}
         >
-          <FigureCell value={"12%"} />
+          <FigureCell value={"12%"} subtitle={"MVP Completion"} />
         </DashboardCell>
         <DashboardCell
-          title="Total Progress"
+          title="Progress By Repository"
           x={1}
           y={0}
           colspan={3}
@@ -36,7 +36,7 @@ export class ProjectManagementDashboard extends React.Component<{}, IState> {
         >
           <RepoProgress value={"12%"} />
         </DashboardCell>
-        <DashboardCell title="Burndown" x={0} y={1} colspan={4} rowspan={1}>
+        <DashboardCell title="Burndown" x={0} y={1} colspan={4} rowspan={2}>
           <Burndown value={"12%"} />
         </DashboardCell>
       </Dashboard>
