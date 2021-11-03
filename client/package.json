@@ -59,7 +59,7 @@
     "uglifyjs-webpack-plugin": "1.2.5",
     "url-loader": "0.6.2",
     "uuid": "^3.3.2",
-    "validator": "^10.8.0",
+    "validator": "^13.7.0",
     "webpack": "^4.27.1",
     "webpack-bundle-analyzer": "^3.0.3",
     "webpack-concat-plugin": "^3.0.0",
